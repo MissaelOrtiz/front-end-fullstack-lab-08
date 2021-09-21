@@ -23,7 +23,10 @@ export const postGame = (newGame) => {
 };
 
 export const updateGame = (id, newGame) => {
-  return fetch(`${process.env.URL}/${id}`, { method: 'PUT', body: newGame })
+  return fetch(`${process.env.URL}/${id}`, { method: 'PUT', body: JSON.stringify(newGame), headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'application/json'
+  } })
     .then((res) => res.json());
 };
 

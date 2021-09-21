@@ -45,3 +45,32 @@ export const useCreateEvents = () => {
 
   return { title, medium, genre, handleTitle, handleMedium, handleGenre };
 };
+
+export const useEditEvents = (id) => {
+  const [loading, setLoading] = useState(true);
+  const [title, setTitle] = useState('');
+  const [medium, setMedium] = useState('');
+  const [genre, setGenre] = useState('');
+
+  useEffect(() => {
+    fetchGameById(id)
+      .then(game => {
+        setTitle(game.title);
+        setMedium(game.medium);
+        setGenre(game.genre);
+      })
+      .finally(() => setLoading(false));
+  }, [id]);
+
+  const handleTitle = ({ target }) => {
+    setTitle(target.value);
+  };
+  const handleMedium = ({ target }) => {
+    setMedium(target.value);
+  };
+  const handleGenre = ({ target }) => {
+    setGenre(target.value);
+  };
+
+  return { loading, title, medium, genre, handleTitle, handleMedium, handleGenre };
+};

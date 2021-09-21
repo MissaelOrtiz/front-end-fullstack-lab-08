@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import GamesList from '../games/GameList';
 import GameDetail from '../games/GameDetail';
 import GameCreate from '../games/GameCreate';
+import GameEdit from '../games/GameEdit';
 
 export default function App() {
   return (
@@ -16,6 +17,9 @@ export default function App() {
       <Switch>
         <Route exact path="/create">
           <GameCreate />
+        </Route>
+        <Route exact path="/edit/:id">
+          <GameEdit />
         </Route>
         <Route path="/:id">
           <GameDetail />
