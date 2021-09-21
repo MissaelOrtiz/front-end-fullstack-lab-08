@@ -27,3 +27,21 @@ export const useDetailEvents = (id) => {
 
   return { loading, game };
 };
+
+export const useCreateEvents = () => {
+  const [title, setTitle] = useState('');
+  const [medium, setMedium] = useState('');
+  const [genre, setGenre] = useState('');
+
+  const handleTitle = ({ target }) => {
+    setTitle(target.value);
+  };
+  const handleMedium = ({ target }) => {
+    setMedium(target.value);
+  };
+  const handleGenre = ({ target }) => {
+    setGenre(target.value);
+  };
+
+  return { title, medium, genre, handleTitle, handleMedium, handleGenre };
+};

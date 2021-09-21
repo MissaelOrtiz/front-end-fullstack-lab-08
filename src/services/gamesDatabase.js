@@ -15,7 +15,10 @@ export const fetchGameById = (id) => {
 };
 
 export const postGame = (newGame) => {
-  return fetch(`${process.env.URL}/`, { method: 'POST', body: JSON.stringify(newGame) })
+  return fetch(`${process.env.URL}/`, { method: 'POST', body: JSON.stringify(newGame), headers: {
+    'Access-Control-Allow-Origin': '*',
+    'Content-Type': 'application/json'
+  } })
     .then((res) => res.json());
 };
 
