@@ -11,8 +11,7 @@ const GamesList = () => {
         <li key={game.id}>
           <Game 
             gameTitle={game.title}
-            gameMedium={game.medium}
-            gameGenre={game.genre}
+            gameId={game.id}
           />
         </li>
       ))}
