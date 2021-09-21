@@ -25,6 +25,6 @@ export const updateGame = (id, newGame) => {
 };
 
 export const deleteGameById = (id) => {
-  return fetch(`${process.env.URL}/${id}`, { method: 'GET' })
+  return fetch(`${process.env.URL}/${id}`, { method: 'DELETE' })
     .then((res) => res.json());
 };

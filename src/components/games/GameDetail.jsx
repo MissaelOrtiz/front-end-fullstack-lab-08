@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDetailEvents } from '../../hooks/useEvents';
 import { useParams } from 'react-router-dom';
+import { deleteGameById } from '../../services/gamesDatabase';
 
 const GameDetail = () => {
   const { id } = useParams();
@@ -12,6 +13,15 @@ const GameDetail = () => {
       <h2>{title}</h2>
       <p>Medium: {medium}</p>
       <p>Genre: {genre}</p>
+      <section>
+        <button onClick={() => {
+          location.replace(`/edit/${id}`);
+        }}>Edit</button>
+        <button onClick={() => {
+          deleteGameById(id);
+          location.replace('/');
+        }}>Delete</button>
+      </section>
     </div>
   );
 };

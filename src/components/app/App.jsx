@@ -15,7 +15,7 @@ export default function App() {
         <Route path="/:id">
           <GameDetail />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <GamesList />
         </Route>
       </Switch>
