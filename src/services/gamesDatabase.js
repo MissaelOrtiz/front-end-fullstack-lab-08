@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 export const fetchGames = () => {
-  return fetch(`${process.env.URL}/`, { method: 'GET',
+  return fetch('https://ac-vill.herokuapp.com/villagers/', { method: 'GET',
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json'

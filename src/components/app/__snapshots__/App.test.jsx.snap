@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App test renders a list of games 1`] = `
+<div>
+  <header>
+    <nav>
+      <a
+        href="/"
+      >
+         Home 
+      </a>
+      <a
+        href="/create"
+      >
+         Create 
+      </a>
+    </nav>
+  </header>
+  <ul
+    aria-label="games"
+    role="list"
+  >
+    <li>
+      <button>
+        <h2>
+          PF2e
+        </h2>
+      </button>
+    </li>
+  </ul>
+</div>
+`;
